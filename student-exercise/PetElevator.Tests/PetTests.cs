@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PetElevator.CRM;
+using PetElevator;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,15 +13,17 @@ namespace PetElevator.Tests
         public void ListTest()
         {
             
-            
+            //Arrange
             Pet pet = new Pet("PetName", "Species");
             List<string> testList = new List<string>();
             testList.Add("Rabies");
             testList.Add("Distemper");
-            testList.Add("Parvo");
-            List<string> results = new List<string>();
+            testList.Add("Parvo");            
             pet.Vaccinations = testList;
-            pet.ListVaccinations();
+            string expected = "Rabies, Distemper, Parvo";
+            //Assert
+            Assert.AreEqual(expected,pet.ListVaccinations());
+
 
         }
     }

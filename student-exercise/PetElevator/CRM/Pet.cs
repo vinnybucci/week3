@@ -20,20 +20,8 @@ namespace PetElevator
 
         public string ListVaccinations()
         {
-             string v = Vaccinations.ToString();
-            return v;
-            // Vaccinations.ToString();
-            //char[] delimiters = {' ', ',' };
-            //string[] vaccinationsList = Vaccinations.ToArray();
-           
-           
-            
-            
-            //for (int i = 0; i < Vaccinations.Count-1; i++)
-            //{
-            //    (Vaccinations[i]);           
-            //}
-            //return vaccinationsList;
+            string vaccineList = String.Join(", ", Vaccinations);
+            return vaccineList;
         }
 
     }
