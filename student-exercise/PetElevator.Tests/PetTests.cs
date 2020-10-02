@@ -1,14 +1,19 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PetElevator.CRM;
+using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace PetElevator
+namespace PetElevator.Tests
 {
-    class Program 
+    [TestClass]
+    public class PetTests
     {
-        static void Main(string[] args)
+        [TestMethod]
+        public void ListTest()
         {
-            Console.WriteLine("Hello World!");
-
+            
+            
             Pet pet = new Pet("PetName", "Species");
             List<string> testList = new List<string>();
             testList.Add("Rabies");
@@ -17,7 +22,7 @@ namespace PetElevator
             List<string> results = new List<string>();
             pet.Vaccinations = testList;
             pet.ListVaccinations();
-            Console.WriteLine(pet.ListVaccinations());
+
         }
     }
 }
