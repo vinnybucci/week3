@@ -40,15 +40,21 @@ namespace PetElevator.HR
         {
             double price=0;
             string halfOff = "Walking";
-            foreach (KeyValuePair <string, double> value in servicesRendered)
+
+            if (!(servicesRendered == null))
             {
-                if (value.Key == halfOff)
+
+
+                foreach (KeyValuePair<string, double> value in servicesRendered)
                 {
-                    price = price + value.Value / 2;                   
-                }
-                else
-                {
-                    price += value.Value;
+                    if (value.Key == halfOff)
+                    {
+                        price = price + value.Value / 2;
+                    }
+                    else
+                    {
+                        price += value.Value;
+                    }
                 }
             }
             return price;

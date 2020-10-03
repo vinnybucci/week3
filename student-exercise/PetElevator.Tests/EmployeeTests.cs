@@ -56,7 +56,28 @@ namespace PetElevator.Tests
             Assert.AreEqual(expected, results);
 
         }
+        [TestMethod]
+        public void GetBalanceNullTest()
+        {
+            Dictionary<string, double> balanceTest =null;
+            Employee employee = new Employee("firstName", "lastName");
+            double results = employee.GetBalanceDue(balanceTest);
+            double expected = 0;
+            Assert.AreEqual(expected, results);
 
+        }
+        [TestMethod]
+        public void EmptyDictionaryTest()
+        {
+            Dictionary<string, double> balanceTest = new Dictionary<string, double>();
+          
+               
+            Employee employee = new Employee("firstName", "lastName");
+            double results = employee.GetBalanceDue(balanceTest);
+            double expected = 0;
+            Assert.AreEqual(expected, results);
+
+        }
 
     }
 }

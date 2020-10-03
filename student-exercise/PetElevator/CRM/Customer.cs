@@ -24,11 +24,14 @@ namespace PetElevator
         {
             
                 double price = 0;
+            if (!(servicesRendered == null))
+            {
                 foreach (KeyValuePair<string, double> value in servicesRendered)
                 {
-                    price +=value.Value;
+                    price += value.Value;
 
                 }
+            }
                 return price;
             
         }
