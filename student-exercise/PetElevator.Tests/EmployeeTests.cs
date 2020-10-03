@@ -50,8 +50,8 @@ namespace PetElevator.Tests
 
 
             };
-            Customer customer = new Customer("firstName", "lastName");
-            double results = customer.GetBalanceDue(balanceTest);
+            Employee employee = new Employee("firstName", "lastName");
+            double results = employee.GetBalanceDue(balanceTest);
             double expected = 80.975;
             Assert.AreEqual(expected, results);
 
