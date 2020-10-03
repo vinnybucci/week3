@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PetElevator.CRM
+namespace PetElevator
 {
-    public class Customer : Person
+    public class Customer : Person, IBillable 
     {
 
         public string PhoneNumber { get; set; }
@@ -15,6 +15,22 @@ namespace PetElevator.CRM
         {
             PhoneNumber = phoneNumber;
         }
-        
+        public Customer(string firstName, string lastName) : this(firstName, lastName, "") 
+        {
+
+        }
+
+        public double GetBalanceDue(Dictionary<string, double> servicesRendered)
+        {
+            
+                double price = 0;
+                foreach (KeyValuePair<string, double> value in servicesRendered)
+                {
+                    price +=value.Value;
+
+                }
+                return price;
+            
+        }
     }
 }
