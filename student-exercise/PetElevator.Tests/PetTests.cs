@@ -26,5 +26,38 @@ namespace PetElevator.Tests
 
 
         }
+
+        [TestMethod]
+        public void EmptyListTest()
+        {
+
+            //Arrange
+            Pet pet = new Pet("PetName", "Species");
+            List<string> testList = new List<string>();
+           
+            pet.Vaccinations = testList;
+            string expected = "";
+            //Assert
+            Assert.AreEqual(expected, pet.ListVaccinations());
+
+
+        }
+
+
+        [TestMethod]
+        public void NullListTest()
+        {
+
+            //Arrange
+            Pet pet = new Pet("PetName", "Species");
+            List<string> testList = null;
+
+            pet.Vaccinations = testList;
+            string expected = "";
+            //Assert
+            Assert.AreEqual(expected, pet.ListVaccinations());
+
+
+        }
     }
 }

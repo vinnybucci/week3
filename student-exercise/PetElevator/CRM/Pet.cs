@@ -20,7 +20,11 @@ namespace PetElevator
 
         public string ListVaccinations()
         {
-            string vaccineList = String.Join(", ", Vaccinations);
+            string vaccineList = "";
+            if (!(Vaccinations == null))
+            {
+                vaccineList = String.Join(", ", Vaccinations);
+            }
             return vaccineList;
         }
 
